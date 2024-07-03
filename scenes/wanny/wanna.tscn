@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh2d7i5tu13x4"]
+
+[ext_resource type="Texture2D" uid="uid://0yqtvcxccofd" path="res://scenes/wanny/wanna.png" id="1_qom5k"]
+[ext_resource type="Script" path="res://scenes/wanny/wanna.gd" id="1_y8fb2"]
+
+[sub_resource type="FontFile" id="FontFile_s5iap"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdk0b"]
+font = SubResource("FontFile_s5iap")
+font_size = 20
+font_color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[node name="wanna" type="StaticBody2D"]
+script = ExtResource("1_y8fb2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = -2
+polygon = PackedVector2Array(-48, -61, -48, 63, 48, 63, 48, -61, 42, -61, 42, -9, -42, -9, -42, -61)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("1_qom5k")
+
+[node name="Label" type="Label" parent="."]
+z_index = -9
+offset_left = -42.0
+offset_top = -61.0
+offset_right = 42.0
+offset_bottom = -35.0
+text = "99"
+label_settings = SubResource("LabelSettings_hdk0b")
+horizontal_alignment = 1
+vertical_alignment = 1

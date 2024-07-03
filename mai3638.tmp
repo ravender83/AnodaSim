@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b88y5s0qfrhrt"]
+
+[ext_resource type="PackedScene" uid="uid://umojd038iwv7" path="res://player.tscn" id="1_qppqj"]
+[ext_resource type="PackedScene" uid="uid://c2ad6tff4acxj" path="res://bumper.tscn" id="2_2vki4"]
+[ext_resource type="Script" path="res://playerY.gd" id="2_f73or"]
+
+[node name="main" type="Node2D"]
+
+[node name="PlayerX" parent="." instance=ExtResource("1_qppqj")]
+position = Vector2(520, 114)
+
+[node name="PlayerY" parent="." instance=ExtResource("1_qppqj")]
+position = Vector2(520, 420)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_f73or")
+
+[node name="Bumper" parent="." instance=ExtResource("2_2vki4")]
+position = Vector2(30, 110)
+
+[node name="Bumper2" parent="." instance=ExtResource("2_2vki4")]
+position = Vector2(1106, 110)
+
+[node name="Pudlo" parent="." instance=ExtResource("1_qppqj")]
+position = Vector2(712, 570)
+collision_layer = 2
+collision_mask = 2
+script = null

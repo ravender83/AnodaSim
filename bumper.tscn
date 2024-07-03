@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ad6tff4acxj"]
+
+[ext_resource type="Texture2D" uid="uid://de7j8k2tex5om" path="res://tape.png" id="1_ce206"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xi2q"]
+size = Vector2(16, 987)
+
+[node name="Bumper" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 395.5)
+shape = SubResource("RectangleShape2D_2xi2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ce206")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgo2hto4h74g7"]
+
+[ext_resource type="Script" path="res://scenes/zawieszka/zawieszka.gd" id="1_uji27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo0a6"]
+size = Vector2(52, 86)
+
+[sub_resource type="Gradient" id="Gradient_epelg"]
+offsets = PackedFloat32Array(0, 0.996109, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.466935, 0.483953, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rc2uq"]
+gradient = SubResource("Gradient_epelg")
+width = 50
+
+[node name="Zawieszka" type="CharacterBody2D"]
+script = ExtResource("1_uji27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xo0a6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 1, 0.584314)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -43.0
+offset_right = 26.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_rc2uq")

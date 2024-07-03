@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://gw8ri2m0s7vq"]
+
+[ext_resource type="Texture2D" uid="uid://0yqtvcxccofd" path="res://scenes/wanny/wanna.png" id="1_qom5k"]
+
+[sub_resource type="GDScript" id="GDScript_apy58"]
+script/source = "extends CharacterBody2D
+
+const speed = 300.0
+const acc = 100
+var collision
+
+func _process(delta):
+	#$labPozycja.text = \"Y: %.1f\" % position.y
+	pass
+	
+func _physics_process(delta):
+	var input = Vector2.ZERO
+
+	input = Vector2(0, Input.get_axis(\"ui_gora\", \"ui_dol\")).normalized() 
+	
+	if input.y != 0:
+		velocity.y += input.y * acc * delta
+		if abs(velocity.y) > speed:
+			velocity.y = sign(velocity.y)*speed
+	else:
+		if abs(velocity.y) > 0:
+			velocity.y -= sign(velocity.y) * acc * delta
+			if abs(velocity.y) < 5:
+				velocity.y = 0
+
+	collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = Vector2.ZERO
+		var collider = collision.get_collider()
+		#if collider is CharacterBody2D:
+			#collider.move_and_collide(velocity * delta)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdvn"]
+size = Vector2(13, 30)
+
+[node name="wanna" type="CharacterBody2D"]
+script = SubResource("GDScript_apy58")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = -2
+polygon = PackedVector2Array(-48, -61, -48, 63, 48, 63, 48, -61, 42, -61, 42, -9, -42, -9, -42, -61)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("1_qom5k")
+
+[node name="blacha_gora" type="Area2D" parent="."]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blacha_gora"]
+position = Vector2(54.5, -46)
+shape = SubResource("RectangleShape2D_lgdvn")
+
+[node name="blacha_dol" type="Area2D" parent="."]
+position = Vector2(0, 94)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blacha_dol"]
+position = Vector2(54.5, -46)
+shape = SubResource("RectangleShape2D_lgdvn")

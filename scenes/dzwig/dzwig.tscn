@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://du2j2o0d8vfkg"]
+
+[ext_resource type="PackedScene" uid="uid://umojd038iwv7" path="res://scenes/dzwig/dzwigX.tscn" id="1_opf0t"]
+[ext_resource type="PackedScene" uid="uid://ct3uctoe57cst" path="res://scenes/dzwig/dzwigY.tscn" id="2_4am5y"]
+
+[node name="Dzwig" type="Node2D"]
+
+[node name="PlayerX" parent="." instance=ExtResource("1_opf0t")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="PlayerY" parent="." instance=ExtResource("2_4am5y")]
+position = Vector2(0, 81)
+collision_layer = 8
+collision_mask = 4

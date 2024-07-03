@@ -1,0 +1,281 @@
+[gd_scene load_steps=7 format=3 uid="uid://b88y5s0qfrhrt"]
+
+[ext_resource type="PackedScene" uid="uid://c2ad6tff4acxj" path="res://bumper.tscn" id="2_2vki4"]
+[ext_resource type="PackedScene" uid="uid://du2j2o0d8vfkg" path="res://scenes/dzwig/dzwig.tscn" id="3_5trik"]
+[ext_resource type="PackedScene" uid="uid://dh2d7i5tu13x4" path="res://scenes/wanny/wanna.tscn" id="3_l2vdh"]
+[ext_resource type="PackedScene" uid="uid://gw8ri2m0s7vq" path="res://scenes/wanny/wannaprzejezdna.tscn" id="3_q32ic"]
+[ext_resource type="PackedScene" uid="uid://qg7dksnn5lr1" path="res://scenes/zawieszka/zawieszkafiz.tscn" id="5_krdqg"]
+[ext_resource type="PackedScene" uid="uid://cdtvh17ll2u7d" path="res://scenes/sensor/czujnik.tscn" id="6_ngoke"]
+
+[node name="main" type="Node2D"]
+
+[node name="Bumper" parent="." instance=ExtResource("2_2vki4")]
+position = Vector2(9, 99)
+collision_layer = 4
+collision_mask = 12
+
+[node name="Bumper2" parent="." instance=ExtResource("2_2vki4")]
+position = Vector2(1891, 99)
+collision_layer = 4
+collision_mask = 12
+
+[node name="Wanny" type="Node" parent="."]
+
+[node name="wanny37_54" type="Node2D" parent="Wanny"]
+position = Vector2(-22, 51)
+
+[node name="wanna54" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(100, 200)
+numer = "54"
+
+[node name="wanna53" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(200, 200)
+numer = "53"
+
+[node name="wanna52" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(300, 200)
+numer = "52"
+
+[node name="wanna51" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(400, 200)
+numer = "51"
+
+[node name="wanna50" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(500, 200)
+numer = "50"
+
+[node name="wanna49" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(600, 200)
+numer = "49"
+
+[node name="wanna48" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(700, 200)
+numer = "48"
+
+[node name="wanna47" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(800, 200)
+numer = "47"
+
+[node name="wanna46" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(900, 200)
+numer = "46"
+
+[node name="wanna45" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1000, 200)
+numer = "45"
+
+[node name="wanna44" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1100, 200)
+numer = "44"
+
+[node name="wanna43" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1200, 200)
+numer = "43"
+
+[node name="wanna42" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1300, 200)
+numer = "42"
+
+[node name="wanna41" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1400, 200)
+numer = "41"
+
+[node name="wanna40" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1500, 200)
+numer = "40"
+
+[node name="wanna39" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1600, 200)
+numer = "39"
+
+[node name="wanna38" parent="Wanny/wanny37_54" instance=ExtResource("3_l2vdh")]
+position = Vector2(1700, 200)
+numer = "38"
+
+[node name="wanny1_18" type="Node2D" parent="Wanny"]
+position = Vector2(-22, 351)
+
+[node name="wanna1" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(100, 200)
+numer = "01"
+
+[node name="wanna2" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(200, 200)
+numer = "02"
+
+[node name="wanna3" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(300, 200)
+numer = "03"
+
+[node name="wanna4" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(400, 200)
+numer = "04"
+
+[node name="wanna5" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(500, 200)
+numer = "05"
+
+[node name="wanna6" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(600, 200)
+numer = "06"
+
+[node name="wanna7" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(700, 200)
+numer = "07"
+
+[node name="wanna8" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(800, 200)
+numer = "08"
+
+[node name="wanna9" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(900, 200)
+numer = "09"
+
+[node name="wanna10" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1000, 200)
+numer = "10"
+
+[node name="wanna11" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1100, 200)
+numer = "11"
+
+[node name="wanna12" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1200, 200)
+numer = "12"
+
+[node name="wanna13" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1300, 200)
+numer = "13"
+
+[node name="wanna14" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1400, 200)
+numer = "14"
+
+[node name="wanna15" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1500, 200)
+numer = "15"
+
+[node name="wanna16" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1600, 200)
+numer = "16"
+
+[node name="wanna17" parent="Wanny/wanny1_18" instance=ExtResource("3_l2vdh")]
+position = Vector2(1700, 200)
+numer = "17"
+
+[node name="wanny19_36" type="Node2D" parent="Wanny"]
+position = Vector2(-22, 651)
+
+[node name="wanna36" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(100, 200)
+numer = "36"
+
+[node name="wanna35" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(200, 200)
+numer = "35"
+
+[node name="wanna34" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(300, 200)
+numer = "34"
+
+[node name="wanna33" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(400, 200)
+numer = "33"
+
+[node name="wanna32" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(500, 200)
+numer = "32"
+
+[node name="wanna31" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(600, 200)
+numer = "31"
+
+[node name="wanna30" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(700, 200)
+numer = "30"
+
+[node name="wanna29" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(800, 200)
+numer = "29"
+
+[node name="wanna28" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(900, 200)
+numer = "28"
+
+[node name="wanna27" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1000, 200)
+numer = "27"
+
+[node name="wanna26" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1100, 200)
+numer = "26"
+
+[node name="wanna25" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1200, 200)
+numer = "25"
+
+[node name="wanna24" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1300, 200)
+numer = "24"
+
+[node name="wanna23" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1400, 200)
+numer = "23"
+
+[node name="wanna22" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1500, 200)
+numer = "22"
+
+[node name="wanna21" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1600, 200)
+numer = "21"
+
+[node name="wanna20" parent="Wanny/wanny19_36" instance=ExtResource("3_l2vdh")]
+position = Vector2(1700, 200)
+numer = "20"
+
+[node name="wanna" parent="Wanny" instance=ExtResource("3_q32ic")]
+position = Vector2(1778, 551)
+
+[node name="Dzwigi" type="Node" parent="."]
+
+[node name="DzwigA_1_18" parent="Dzwigi" instance=ExtResource("3_5trik")]
+position = Vector2(78, 351)
+
+[node name="DzwigB_19_36" parent="Dzwigi" instance=ExtResource("3_5trik")]
+position = Vector2(78, 651)
+
+[node name="DzwigC_37_54" parent="Dzwigi" instance=ExtResource("3_5trik")]
+position = Vector2(78, 51)
+
+[node name="zawieszkafiz2" parent="." instance=ExtResource("5_krdqg")]
+z_index = 2
+position = Vector2(79, 520)
+can_sleep = false
+
+[node name="zawieszkafiz3" parent="." instance=ExtResource("5_krdqg")]
+z_index = 2
+position = Vector2(1675, 151)
+can_sleep = false
+
+[node name="Czujniki" type="Node" parent="."]
+
+[node name="czujnik" parent="Czujniki" instance=ExtResource("6_ngoke")]
+position = Vector2(1829, 488)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="czujnik2" parent="Czujniki" instance=ExtResource("6_ngoke")]
+position = Vector2(1829, 512)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="czujnik3" parent="Czujniki" instance=ExtResource("6_ngoke")]
+position = Vector2(1829, 892)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="czujnik4" parent="Czujniki" instance=ExtResource("6_ngoke")]
+position = Vector2(1829, 916)
+collision_layer = 4096
+collision_mask = 4096
