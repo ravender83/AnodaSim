@@ -1,13 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://b88y5s0qfrhrt"]
+[gd_scene load_steps=14 format=3 uid="uid://b88y5s0qfrhrt"]
 
+[ext_resource type="PackedScene" uid="uid://ktm7k0co2o7l" path="res://mqtt/addons/mqtt/mqtt.tscn" id="1_8gaw3"]
+[ext_resource type="Script" path="res://main.gd" id="1_hhk7i"]
 [ext_resource type="PackedScene" uid="uid://c2ad6tff4acxj" path="res://bumper.tscn" id="2_2vki4"]
 [ext_resource type="PackedScene" uid="uid://du2j2o0d8vfkg" path="res://scenes/dzwig/dzwig.tscn" id="3_5trik"]
 [ext_resource type="PackedScene" uid="uid://dh2d7i5tu13x4" path="res://scenes/wanny/wanna.tscn" id="3_l2vdh"]
 [ext_resource type="PackedScene" uid="uid://gw8ri2m0s7vq" path="res://scenes/wanny/wannaprzejezdna.tscn" id="3_q32ic"]
 [ext_resource type="PackedScene" uid="uid://qg7dksnn5lr1" path="res://scenes/zawieszka/zawieszkafiz.tscn" id="5_krdqg"]
-[ext_resource type="PackedScene" uid="uid://cdtvh17ll2u7d" path="res://scenes/sensor/czujnik.tscn" id="6_ngoke"]
+[ext_resource type="PackedScene" uid="uid://48t4n1rhpfyp" path="res://scenes/led/Led.tscn" id="8_o8xqn"]
+
+[sub_resource type="Gradient" id="Gradient_vquf6"]
+colors = PackedColorArray(0.270222, 0.270222, 0.270222, 1, 0.329158, 0.329158, 0.329158, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yi7m8"]
+gradient = SubResource("Gradient_vquf6")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cni44"]
+diffuse_texture = SubResource("GradientTexture1D_yi7m8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u6w8"]
+font_color = Color(0.627451, 0.627451, 0.627451, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc7a6"]
+size = Vector2(12, 12)
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_hhk7i")
+
+[node name="MQTT" parent="." instance=ExtResource("1_8gaw3")]
+
+[node name="TextureRect" type="TextureRect" parent="MQTT"]
+z_index = -5
+z_as_relative = false
+offset_left = 19.0
+offset_top = 2.0
+offset_right = 401.0
+offset_bottom = 30.0
+texture = SubResource("CanvasTexture_cni44")
+
+[node name="btnConnect" type="CheckButton" parent="MQTT"]
+offset_left = 21.0
+offset_top = 1.0
+offset_right = 209.0
+offset_bottom = 32.0
+text = "Connect to broker"
+
+[node name="labStatus" type="Label" parent="MQTT"]
+offset_left = 211.0
+offset_top = 4.0
+offset_right = 273.0
+offset_bottom = 27.0
+text = "Status..."
+label_settings = SubResource("LabelSettings_1u6w8")
 
 [node name="Bumper" parent="." instance=ExtResource("2_2vki4")]
 position = Vector2(9, 99)
@@ -258,24 +302,27 @@ z_index = 2
 position = Vector2(1675, 151)
 can_sleep = false
 
-[node name="Czujniki" type="Node" parent="."]
+[node name="PLC" type="Node" parent="."]
 
-[node name="czujnik" parent="Czujniki" instance=ExtResource("6_ngoke")]
-position = Vector2(1829, 488)
+[node name="I25_2" parent="PLC" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(1829, 479)
+scale = Vector2(0.5, 0.5)
+tag = "I25.2"
+opis = "pozycja18"
+
+[node name="Area2D" type="Area2D" parent="PLC/I25_2"]
 collision_layer = 4096
 collision_mask = 4096
 
-[node name="czujnik2" parent="Czujniki" instance=ExtResource("6_ngoke")]
-position = Vector2(1829, 512)
-collision_layer = 4096
-collision_mask = 4096
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLC/I25_2/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
 
-[node name="czujnik3" parent="Czujniki" instance=ExtResource("6_ngoke")]
-position = Vector2(1829, 892)
-collision_layer = 4096
-collision_mask = 4096
-
-[node name="czujnik4" parent="Czujniki" instance=ExtResource("6_ngoke")]
-position = Vector2(1829, 916)
-collision_layer = 4096
-collision_mask = 4096
+[connection signal="broker_connected" from="MQTT" to="." method="_on_mqtt_broker_connected"]
+[connection signal="broker_connection_failed" from="MQTT" to="." method="_on_mqtt_broker_connection_failed"]
+[connection signal="broker_disconnected" from="MQTT" to="." method="_on_mqtt_broker_disconnected"]
+[connection signal="received_message" from="MQTT" to="." method="_on_mqtt_received_message"]
+[connection signal="toggled" from="MQTT/btnConnect" to="." method="_on_btn_connect_toggled"]
+[connection signal="area_entered" from="PLC/I25_2/Area2D" to="PLC/I25_2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PLC/I25_2/Area2D" to="PLC/I25_2" method="_on_area_2d_area_exited"]

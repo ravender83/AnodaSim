@@ -35,9 +35,3 @@ func _physics_process(delta):
 		#	collider.move_and_collide(velocity * delta)
 
 
-func _on_area_2d_body_entered(body):
-	$Led.on = true
-
-
-func _on_area_2d_body_exited(body):
-	$Led.on = false

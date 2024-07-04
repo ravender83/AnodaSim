@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://umojd038iwv7"]
+[gd_scene load_steps=7 format=3 uid="uid://umojd038iwv7"]
 
 [ext_resource type="Script" path="res://scenes/dzwig/playerX.gd" id="1_lrsoh"]
 [ext_resource type="Texture2D" uid="uid://dre0ni42c7or5" path="res://scenes/dzwig/wozek.png" id="2_0xvo3"]
-[ext_resource type="PackedScene" uid="uid://48t4n1rhpfyp" path="res://scenes/led/Led.tscn" id="3_7dgga"]
-[ext_resource type="PackedScene" uid="uid://cdtvh17ll2u7d" path="res://scenes/sensor/czujnik.tscn" id="4_mud3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owjvt"]
 size = Vector2(61, 3)
@@ -68,35 +66,3 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 205)
 shape = SubResource("RectangleShape2D_vobea")
-
-[node name="Led" parent="." instance=ExtResource("3_7dgga")]
-position = Vector2(-26, 13)
-scale = Vector2(0.4, 0.4)
-opis = "Zawieszka"
-
-[node name="czujnik" parent="." instance=ExtResource("4_mud3y")]
-position = Vector2(34, 0)
-scale = Vector2(0.5, 0.5)
-collision_layer = 4096
-collision_mask = 4096
-
-[node name="czujnik2" parent="." instance=ExtResource("4_mud3y")]
-position = Vector2(34, 12)
-scale = Vector2(0.5, 0.5)
-collision_layer = 4096
-collision_mask = 4096
-
-[node name="czujnik3" parent="." instance=ExtResource("4_mud3y")]
-position = Vector2(34, 70)
-scale = Vector2(0.5, 0.5)
-collision_layer = 4096
-collision_mask = 4096
-
-[node name="czujnik4" parent="." instance=ExtResource("4_mud3y")]
-position = Vector2(34, 82)
-scale = Vector2(0.5, 0.5)
-collision_layer = 4096
-collision_mask = 4096
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

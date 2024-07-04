@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cig0d483l3xee" path="res://scenes/led/sensor_yellow.svg" id="4"]
 [ext_resource type="Texture2D" uid="uid://cquxhwspn82of" path="res://scenes/led/sensor_red.svg" id="5"]
 [ext_resource type="Texture2D" uid="uid://davxlvnumpic8" path="res://scenes/led/sensor_blue.svg" id="6"]
-[ext_resource type="FontVariation" path="res://scenes/led/fontCourier.tres" id="7_na1kl"]
+[ext_resource type="FontVariation" uid="uid://d3v63v7uwyrmc" path="res://scenes/led/fontCourier.tres" id="7_na1kl"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{

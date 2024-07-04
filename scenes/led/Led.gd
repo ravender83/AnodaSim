@@ -17,3 +17,11 @@ func _process(delta):
 func update():
 	$labTag.text = tag
 	$labOpis.text = opis
+
+
+func _on_area_2d_area_entered(area):
+	on = true
+
+
+func _on_area_2d_area_exited(area):
+	on = false
