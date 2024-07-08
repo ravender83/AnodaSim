@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b88y5s0qfrhrt"]
+[gd_scene load_steps=15 format=3 uid="uid://b88y5s0qfrhrt"]
 
 [ext_resource type="PackedScene" uid="uid://ktm7k0co2o7l" path="res://mqtt/addons/mqtt/mqtt.tscn" id="1_8gaw3"]
 [ext_resource type="Script" path="res://main.gd" id="1_hhk7i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du2j2o0d8vfkg" path="res://scenes/dzwig/dzwig.tscn" id="3_5trik"]
 [ext_resource type="PackedScene" uid="uid://dh2d7i5tu13x4" path="res://scenes/wanny/wanna.tscn" id="3_l2vdh"]
 [ext_resource type="PackedScene" uid="uid://gw8ri2m0s7vq" path="res://scenes/wanny/wannaprzejezdna.tscn" id="3_q32ic"]
+[ext_resource type="PackedScene" uid="uid://djtlmrwx7k3t3" path="res://bumper_small.tscn" id="4_34wlt"]
 [ext_resource type="PackedScene" uid="uid://qg7dksnn5lr1" path="res://scenes/zawieszka/zawieszkafiz.tscn" id="5_krdqg"]
 [ext_resource type="PackedScene" uid="uid://48t4n1rhpfyp" path="res://scenes/led/Led.tscn" id="8_o8xqn"]
 
@@ -62,6 +63,9 @@ collision_mask = 12
 position = Vector2(1891, 99)
 collision_layer = 4
 collision_mask = 12
+
+[node name="Bumpersmall1" parent="." instance=ExtResource("4_34wlt")]
+position = Vector2(1778, 920)
 
 [node name="Wanny" type="Node" parent="."]
 
@@ -286,6 +290,66 @@ position = Vector2(1778, 551)
 [node name="DzwigA_1_18" parent="Dzwigi" instance=ExtResource("3_5trik")]
 position = Vector2(78, 351)
 
+[node name="I201_0" parent="Dzwigi/DzwigA_1_18/PlayerX" index="5" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(49, -11)
+scale = Vector2(0.5, 0.5)
+tag = "I201.0"
+opis = "Aup"
+
+[node name="Area2D" type="Area2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I201_0"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I201_0/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[node name="I203_7" parent="Dzwigi/DzwigA_1_18/PlayerX" index="6" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(49, 13)
+scale = Vector2(0.5, 0.5)
+tag = "I203_7"
+opis = "Azwolnijup"
+
+[node name="Area2D" type="Area2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I203_7"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I203_7/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[node name="I203_6" parent="Dzwigi/DzwigA_1_18/PlayerX" index="7" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(49, 47)
+scale = Vector2(0.5, 0.5)
+tag = "I203.6"
+opis = "Azwolnijdown"
+
+[node name="Area2D" type="Area2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I203_6"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I203_6/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[node name="I201_1" parent="Dzwigi/DzwigA_1_18/PlayerX" index="8" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(49, 71)
+scale = Vector2(0.5, 0.5)
+tag = "I201_1"
+opis = "Adown"
+
+[node name="Area2D" type="Area2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I201_1"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dzwigi/DzwigA_1_18/PlayerX/I201_1/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
 [node name="DzwigB_19_36" parent="Dzwigi" instance=ExtResource("3_5trik")]
 position = Vector2(78, 651)
 
@@ -294,19 +358,19 @@ position = Vector2(78, 51)
 
 [node name="zawieszkafiz2" parent="." instance=ExtResource("5_krdqg")]
 z_index = 2
-position = Vector2(79, 520)
+position = Vector2(1678, 803)
 can_sleep = false
 
 [node name="zawieszkafiz3" parent="." instance=ExtResource("5_krdqg")]
 z_index = 2
-position = Vector2(1675, 151)
+position = Vector2(1778, 510)
 can_sleep = false
 
 [node name="PLC" type="Node" parent="."]
 
 [node name="I25_2" parent="PLC" instance=ExtResource("8_o8xqn")]
 unique_name_in_owner = true
-position = Vector2(1829, 479)
+position = Vector2(1833, 479)
 scale = Vector2(0.5, 0.5)
 tag = "I25.2"
 opis = "pozycja18"
@@ -319,10 +383,74 @@ collision_mask = 4096
 position = Vector2(-6, 22)
 shape = SubResource("RectangleShape2D_yc7a6")
 
+[node name="I25_1" parent="PLC" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(1833, 514)
+scale = Vector2(0.5, 0.5)
+tag = "I25.1"
+opis = "zwolnij18"
+
+[node name="Area2D" type="Area2D" parent="PLC/I25_1"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLC/I25_1/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[node name="I25_4" parent="PLC" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(1833, 787)
+scale = Vector2(0.5, 0.5)
+tag = "I25.4"
+opis = "zwolnij19"
+
+[node name="Area2D" type="Area2D" parent="PLC/I25_4"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLC/I25_4/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[node name="I25_3" parent="PLC" instance=ExtResource("8_o8xqn")]
+unique_name_in_owner = true
+position = Vector2(1833, 822)
+scale = Vector2(0.5, 0.5)
+tag = "I25.3"
+opis = "pozycja19"
+
+[node name="Area2D" type="Area2D" parent="PLC/I25_3"]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLC/I25_3/Area2D"]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_yc7a6")
+
+[connection signal="TR_ramp" from="." to="Wanny/wanna" method="_on_main_tr_ramp"]
+[connection signal="TR_speed" from="." to="Wanny/wanna" method="_on_main_tr_speed"]
+[connection signal="TR_stop" from="." to="Wanny/wanna" method="_on_main_tr_stop"]
 [connection signal="broker_connected" from="MQTT" to="." method="_on_mqtt_broker_connected"]
 [connection signal="broker_connection_failed" from="MQTT" to="." method="_on_mqtt_broker_connection_failed"]
 [connection signal="broker_disconnected" from="MQTT" to="." method="_on_mqtt_broker_disconnected"]
 [connection signal="received_message" from="MQTT" to="." method="_on_mqtt_received_message"]
 [connection signal="toggled" from="MQTT/btnConnect" to="." method="_on_btn_connect_toggled"]
+[connection signal="area_entered" from="Dzwigi/DzwigA_1_18/PlayerX/I201_0/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I201_0" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Dzwigi/DzwigA_1_18/PlayerX/I201_0/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I201_0" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Dzwigi/DzwigA_1_18/PlayerX/I203_7/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I203_7" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Dzwigi/DzwigA_1_18/PlayerX/I203_7/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I203_7" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Dzwigi/DzwigA_1_18/PlayerX/I203_6/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I203_6" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Dzwigi/DzwigA_1_18/PlayerX/I203_6/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I203_6" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Dzwigi/DzwigA_1_18/PlayerX/I201_1/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I201_1" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Dzwigi/DzwigA_1_18/PlayerX/I201_1/Area2D" to="Dzwigi/DzwigA_1_18/PlayerX/I201_1" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="PLC/I25_2/Area2D" to="PLC/I25_2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="PLC/I25_2/Area2D" to="PLC/I25_2" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="PLC/I25_1/Area2D" to="PLC/I25_1" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PLC/I25_1/Area2D" to="PLC/I25_1" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="PLC/I25_4/Area2D" to="PLC/I25_4" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PLC/I25_4/Area2D" to="PLC/I25_4" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="PLC/I25_3/Area2D" to="PLC/I25_3" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PLC/I25_3/Area2D" to="PLC/I25_3" method="_on_area_2d_area_exited"]
+
+[editable path="Dzwigi/DzwigA_1_18"]

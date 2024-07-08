@@ -55,7 +55,7 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="CharacterBody2D"]
 position = Vector2(0, 5)
-polygon = PackedVector2Array(-17, 45, -17, 51, 17, 51, 17, 45, 15, 45, 12, 48, 12, 50, -12, 50, -12, 48, -15, 45)
+polygon = PackedVector2Array(-17, 47, -17, 51, 17, 51, 17, 47, 13, 47, 12, 48, 12, 50, -12, 50, -12, 48, -13, 47)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4096

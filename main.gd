@@ -1,8 +1,12 @@
 extends Node2D
 
-var topics = ["PLC"]
+var topics = ["PLC", "TR_OUT", "A", "B", "C"]
 var time_passed : float = 0.0
-const TIME_INTERVAL : float = 0.5
+const TIME_INTERVAL : float = 0.2
+
+signal TR_speed
+signal TR_ramp
+signal TR_stop
 
 var boolean = {
 	"false": false,
@@ -10,10 +14,15 @@ var boolean = {
 }
 
 var tagi = {
-	"I25_2": {"on": false, "opis": "Siłownik HP"},
-	"I25_1": {"on": false, "opis": "Siłownik WP"},
-	"I25_4": {"on": false, "opis": "Siłownik EZ HP"},
-	"I25_3": {"on": false, "opis": "Siłownik EZ WP"},
+	"I25_2": {"on": false, "opis": "pozycja18"},
+	"I25_1": {"on": false, "opis": "zwolnij18"},
+	"I25_4": {"on": false, "opis": "zwolnij19"},
+	"I25_3": {"on": false, "opis": "pozycja19"},
+	"I201_0": {"on": false, "opis": "Aup"},
+	"I201_1": {"on": false, "opis": "Adown"},
+	"I203_7": {"on": false, "opis": "Azwolnijup"},
+	"I203_6": {"on": false, "opis": "Azwolnijdown"},
+	#"I201_2": {"on": false, "opis": "Azawieszka"},
 }
 
 func _visibility(_type):
@@ -42,8 +51,9 @@ func _process(delta):
 	time_passed += delta	
 	if time_passed >= TIME_INTERVAL:
 		if $MQTT/labStatus.text == "connected":
-			_on_publish(%I25_2)
-			pass
+			
+			for key in tagi:
+				_on_publish(get_node(str('%' + key)))
 		time_passed = 0.0
 
 
@@ -69,16 +79,23 @@ func _on_mqtt_received_message(topic, message):
 			else:
 				print('Brak klucza: %s' % [top[1]])
 			_update_hmi()
+		if top[0] == "TR_OUT":
+			if top[1] == "SPEED":
+				emit_signal("TR_speed", message)
+			if top[1] == "RAMP":
+				emit_signal("TR_ramp", message)
+			if top[1] == "STOP":
+				emit_signal("TR_stop", boolean[message])
 	else:
 		print("Nieznany topic: %s" % [top[0]])		
+	pass
 		
 		
 func _on_publish(obj):
 	var qos = 0
-	print(obj)
 	var topic = 'PLC/' + obj.name
 	var message = str(obj.on)
-	#$MQTT.publish(topic, message, false, qos)		
+	$MQTT.publish(topic, message, false, qos)		
 
 func _on_btn_connect_toggled(button_pressed):
 	if button_pressed:
