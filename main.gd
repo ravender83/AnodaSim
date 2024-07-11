@@ -1,12 +1,18 @@
 extends Node2D
 
-var topics = ["PLC", "TR_OUT", "A", "B", "C"]
+var topics = ["PLC", "TR_OUT", "A_OUT", "B_OUT", "C_OUT"]
 var time_passed : float = 0.0
 const TIME_INTERVAL : float = 0.2
 
 signal TR_speed
 signal TR_ramp
 signal TR_stop
+signal AX_speed
+signal AX_ramp
+signal AX_stop
+signal AY_speed
+signal AY_ramp
+signal AY_stop
 
 var boolean = {
 	"false": false,
@@ -54,6 +60,10 @@ func _process(delta):
 			
 			for key in tagi:
 				_on_publish(get_node(str('%' + key)))
+			$MQTT.publish('A_IN/AX_SPEED', str($Dzwigi/DzwigA_1_18/PlayerX.velocity.x), false, 0)
+			$MQTT.publish('A_IN/AX_POSITION', str($Dzwigi/DzwigA_1_18/PlayerX.position.x), false, 0)
+			$MQTT.publish('A_IN/AY_SPEED', str($Dzwigi/DzwigA_1_18/PlayerY.velocity.y), false, 0)
+			#$MQTT.publish('A_IN/AY_POSITION', str($Dzwigi/DzwigA_1_18/PlayerY.position.y), false, 0)	
 		time_passed = 0.0
 
 
@@ -86,6 +96,14 @@ func _on_mqtt_received_message(topic, message):
 				emit_signal("TR_ramp", message)
 			if top[1] == "STOP":
 				emit_signal("TR_stop", boolean[message])
+				
+		if top[0] == "A_OUT":
+			if top[1] == "AX_SPEED":
+				emit_signal("AX_speed", message)
+			if top[1] == "AX_RAMP":
+				emit_signal("AX_ramp", message)
+			if top[1] == "AX_STOP":
+				emit_signal("AX_stop", boolean[message])		
 	else:
 		print("Nieznany topic: %s" % [top[0]])		
 	pass

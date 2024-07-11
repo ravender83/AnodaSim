@@ -428,6 +428,12 @@ collision_mask = 4096
 position = Vector2(-6, 22)
 shape = SubResource("RectangleShape2D_yc7a6")
 
+[connection signal="AX_ramp" from="." to="Dzwigi/DzwigA_1_18/PlayerX" method="_on_main_ax_ramp"]
+[connection signal="AX_speed" from="." to="Dzwigi/DzwigA_1_18/PlayerX" method="_on_main_ax_speed"]
+[connection signal="AX_stop" from="." to="Dzwigi/DzwigA_1_18/PlayerX" method="_on_main_ax_stop"]
+[connection signal="AY_ramp" from="." to="Dzwigi/DzwigA_1_18/PlayerY" method="_on_main_ay_ramp"]
+[connection signal="AY_speed" from="." to="Dzwigi/DzwigA_1_18/PlayerY" method="_on_main_ay_speed"]
+[connection signal="AY_stop" from="." to="Dzwigi/DzwigA_1_18/PlayerY" method="_on_main_ay_stop"]
 [connection signal="TR_ramp" from="." to="Wanny/wanna" method="_on_main_tr_ramp"]
 [connection signal="TR_speed" from="." to="Wanny/wanna" method="_on_main_tr_speed"]
 [connection signal="TR_stop" from="." to="Wanny/wanna" method="_on_main_tr_stop"]
