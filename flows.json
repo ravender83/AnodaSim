@@ -1,0 +1,892 @@
+[
+    {
+        "id": "4ae10c9586788994",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a9e833953952916",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I25_2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "ab46e74c6c53fe28"
+            ]
+        ]
+    },
+    {
+        "id": "35840fa9d83eebe1",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "pozycja18_I25_2",
+        "name": "",
+        "x": 430,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "24f18a04a248833a",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I25_1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "f4f2a2d63e095a8f"
+            ]
+        ]
+    },
+    {
+        "id": "dc3b03854c7c7a2d",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "zwolnij18_I25_1",
+        "name": "",
+        "x": 420,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9559c0cab2d43afc",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I25_3",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "38dca2fc582c80f5"
+            ]
+        ]
+    },
+    {
+        "id": "dda34a832dd731ee",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "zwolnij19_I25_3",
+        "name": "",
+        "x": 420,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c7ac588bdc82b7a3",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I25_4",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 400,
+        "wires": [
+            [
+                "ae88bfef053869be"
+            ]
+        ]
+    },
+    {
+        "id": "37e79ba54eb40ac7",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "pozycja19_I25_4",
+        "name": "",
+        "x": 430,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f3518ff9f20c3df0",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I201_0",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "80e05d0c2b1c6a43"
+            ]
+        ]
+    },
+    {
+        "id": "80e05d0c2b1c6a43",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "Aup_I201_0",
+        "name": "",
+        "x": 390,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5c9d82d4cb4297b4",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I201_1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 500,
+        "wires": [
+            [
+                "f2911511fd080c61"
+            ]
+        ]
+    },
+    {
+        "id": "f2911511fd080c61",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "Adown_I201_1",
+        "name": "",
+        "x": 400,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d6f1bec3e43617de",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I203_7",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 540,
+        "wires": [
+            [
+                "e94fc6e1179d8bfa"
+            ]
+        ]
+    },
+    {
+        "id": "e94fc6e1179d8bfa",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "Azwolnijup_I203_7",
+        "name": "",
+        "x": 410,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5c7db76778b99d7c",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I203_6",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "cc7568baa397f7cd"
+            ]
+        ]
+    },
+    {
+        "id": "cc7568baa397f7cd",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "Azwolnijdown_I203_6",
+        "name": "",
+        "x": 420,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4989475cd7ed4456",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "PLC/I201_2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "609b6c76feb5d8ad"
+            ]
+        ]
+    },
+    {
+        "id": "609b6c76feb5d8ad",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "Azawieszka_I201_2",
+        "name": "",
+        "x": 420,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ab46e74c6c53fe28",
+        "type": "function",
+        "z": "4ae10c9586788994",
+        "name": "neg",
+        "func": "if (msg.payload == true) {\n    msg.payload = false\n} else {\n    msg.payload = true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "35840fa9d83eebe1"
+            ]
+        ]
+    },
+    {
+        "id": "f4f2a2d63e095a8f",
+        "type": "function",
+        "z": "4ae10c9586788994",
+        "name": "neg",
+        "func": "if (msg.payload == true) {\n    msg.payload = false\n} else {\n    msg.payload = true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "dc3b03854c7c7a2d"
+            ]
+        ]
+    },
+    {
+        "id": "38dca2fc582c80f5",
+        "type": "function",
+        "z": "4ae10c9586788994",
+        "name": "neg",
+        "func": "if (msg.payload == true) {\n    msg.payload = false\n} else {\n    msg.payload = true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 360,
+        "wires": [
+            [
+                "dda34a832dd731ee"
+            ]
+        ]
+    },
+    {
+        "id": "ae88bfef053869be",
+        "type": "function",
+        "z": "4ae10c9586788994",
+        "name": "neg",
+        "func": "if (msg.payload == true) {\n    msg.payload = false\n} else {\n    msg.payload = true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "37e79ba54eb40ac7"
+            ]
+        ]
+    },
+    {
+        "id": "ab55b042c42bc1df",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "TR_awaria_hamulca",
+        "name": "",
+        "x": 440,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b2f242a0bf4b1583",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "TR_gotowosc",
+        "name": "",
+        "x": 420,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3de51fa5c33ae940",
+        "type": "inject",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "b2f242a0bf4b1583",
+                "ab55b042c42bc1df",
+                "42b5b0a7af376e54",
+                "fd81622dd21a32bd"
+            ]
+        ]
+    },
+    {
+        "id": "e4c9c1348bbe294e",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "TR_speed",
+        "diff": false,
+        "name": "",
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "4014fc7b781ac4a2"
+            ]
+        ]
+    },
+    {
+        "id": "8daa1f8732a401d1",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "TR_ramp",
+        "diff": false,
+        "name": "",
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "3cc7314f229ffbe4"
+            ]
+        ]
+    },
+    {
+        "id": "4014fc7b781ac4a2",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "TR_OUT/SPEED",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 830,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3cc7314f229ffbe4",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "TR_OUT/RAMP",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 820,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b91ebd97c8bf4f9b",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "TR_stop",
+        "diff": false,
+        "name": "",
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "a432037583982d25"
+            ]
+        ]
+    },
+    {
+        "id": "a432037583982d25",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "TR_OUT/STOP",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 820,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2cf4a1b2cdfb079b",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "A_speed",
+        "diff": false,
+        "name": "",
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "9f9a951e97fe05a8"
+            ]
+        ]
+    },
+    {
+        "id": "df8dfd4c5a1e9082",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "A_ramp",
+        "diff": false,
+        "name": "",
+        "x": 650,
+        "y": 320,
+        "wires": [
+            [
+                "ac3297d3fa7bbfba"
+            ]
+        ]
+    },
+    {
+        "id": "9f9a951e97fe05a8",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "A_OUT/AX_SPEED",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 840,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ac3297d3fa7bbfba",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "A_OUT/AX_RAMP",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 830,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "08c12a7904fdf8be",
+        "type": "s7 in",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "mode": "single",
+        "variable": "A_stop",
+        "diff": false,
+        "name": "",
+        "x": 650,
+        "y": 360,
+        "wires": [
+            [
+                "98038cce04f3bbf0"
+            ]
+        ]
+    },
+    {
+        "id": "98038cce04f3bbf0",
+        "type": "mqtt out",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "A_OUT/AX_STOP",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8be27cec2c070c37",
+        "x": 830,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "42b5b0a7af376e54",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "A_inverter_ready",
+        "name": "",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fd81622dd21a32bd",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "A_po_data_enable",
+        "name": "",
+        "x": 430,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "dda1735c372d9da2",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "A_IN/AX_SPEED",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "c4925ee9c68ad65e"
+            ]
+        ]
+    },
+    {
+        "id": "c4925ee9c68ad65e",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "A_actual_speed",
+        "name": "",
+        "x": 880,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ed84a13ef5d497ae",
+        "type": "mqtt in",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "topic": "A_IN/AX_POSITION",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8be27cec2c070c37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 690,
+        "y": 580,
+        "wires": [
+            [
+                "f932bccfc06e0f22"
+            ]
+        ]
+    },
+    {
+        "id": "6d132c69a9705f66",
+        "type": "s7 out",
+        "z": "4ae10c9586788994",
+        "endpoint": "eaca1b2aebab25ab",
+        "variable": "A_laser",
+        "name": "",
+        "x": 1080,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f932bccfc06e0f22",
+        "type": "change",
+        "z": "4ae10c9586788994",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload * 10000.0",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 580,
+        "wires": [
+            [
+                "6d132c69a9705f66"
+            ]
+        ]
+    },
+    {
+        "id": "8be27cec2c070c37",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "eaca1b2aebab25ab",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "10.10.10.13",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "200",
+        "timeout": "2000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "I25.2",
+                "name": "pozycja18_I25_2"
+            },
+            {
+                "addr": "I25.1",
+                "name": "zwolnij18_I25_1"
+            },
+            {
+                "addr": "I25.4",
+                "name": "pozycja19_I25_4"
+            },
+            {
+                "addr": "I25.3",
+                "name": "zwolnij19_I25_3"
+            },
+            {
+                "addr": "I201.0",
+                "name": "Aup_I201_0"
+            },
+            {
+                "addr": "I201.1",
+                "name": "Adown_I201_1"
+            },
+            {
+                "addr": "I203.7",
+                "name": "Azwolnijup_I203_7"
+            },
+            {
+                "addr": "I203.6",
+                "name": "Azwolnijdown_I203_6"
+            },
+            {
+                "addr": "I201.2",
+                "name": "Azawieszka_I201_2"
+            },
+            {
+                "addr": "I25.6",
+                "name": "TR_awaria_hamulca"
+            },
+            {
+                "addr": "I23.4",
+                "name": "TR_gotowosc"
+            },
+            {
+                "addr": "DB999,INT0",
+                "name": "TR_speed"
+            },
+            {
+                "addr": "DB999,INT2",
+                "name": "TR_ramp"
+            },
+            {
+                "addr": "DB999,X4.0",
+                "name": "TR_stop"
+            },
+            {
+                "addr": "DB999,INT12",
+                "name": "A_speed"
+            },
+            {
+                "addr": "DB999,INT14",
+                "name": "A_ramp"
+            },
+            {
+                "addr": "DB999,X16.0",
+                "name": "A_stop"
+            },
+            {
+                "addr": "DB999,X6.0",
+                "name": "A_inverter_ready"
+            },
+            {
+                "addr": "DB999,X6.1",
+                "name": "A_po_data_enable"
+            },
+            {
+                "addr": "DB999,X6.2",
+                "name": "A_actual_ramp"
+            },
+            {
+                "addr": "DB999,X6.3",
+                "name": "A_actual_program"
+            },
+            {
+                "addr": "DB999,INT8",
+                "name": "A_actual_speed"
+            },
+            {
+                "addr": "ID1100",
+                "name": "A_laser"
+            }
+        ]
+    }
+]
