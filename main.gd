@@ -118,7 +118,7 @@ func _on_mqtt_received_message(topic, message):
 			if send:
 				emit_signal("TR", TR_OUT)
 				send = false
-				print('# ', message, ' ', TR_OUT)
+				print('TR: ', message, ' ', TR_OUT)
 				
 			
 			#if top[1] == "SPEED":
