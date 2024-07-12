@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b88y5s0qfrhrt"]
+[gd_scene load_steps=15 format=3 uid="uid://b88y5s0qfrhrt"]
 
 [ext_resource type="PackedScene" uid="uid://ktm7k0co2o7l" path="res://mqtt/addons/mqtt/mqtt.tscn" id="1_8gaw3"]
 [ext_resource type="Script" path="res://main.gd" id="1_hhk7i"]
@@ -8,11 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gw8ri2m0s7vq" path="res://scenes/wanny/wannaprzejezdna.tscn" id="3_q32ic"]
 [ext_resource type="PackedScene" uid="uid://djtlmrwx7k3t3" path="res://bumper_small.tscn" id="4_34wlt"]
 [ext_resource type="PackedScene" uid="uid://qg7dksnn5lr1" path="res://scenes/zawieszka/zawieszkafiz.tscn" id="5_krdqg"]
-[ext_resource type="Script" path="res://scenes/dzwig/playerAX.gd" id="8_0ef43"]
 [ext_resource type="PackedScene" uid="uid://48t4n1rhpfyp" path="res://scenes/led/Led.tscn" id="8_o8xqn"]
-[ext_resource type="Script" path="res://scenes/dzwig/playerAY.gd" id="10_5tdj6"]
-[ext_resource type="Script" path="res://scenes/dzwig/playerBX.gd" id="11_msky7"]
-[ext_resource type="Script" path="res://scenes/dzwig/playerBY.gd" id="12_byypn"]
 
 [sub_resource type="Gradient" id="Gradient_vquf6"]
 colors = PackedColorArray(0.270222, 0.270222, 0.270222, 1, 0.329158, 0.329158, 0.329158, 1)
@@ -294,9 +290,6 @@ position = Vector2(1778, 551)
 [node name="A" parent="Dzwigi" instance=ExtResource("3_5trik")]
 position = Vector2(78, 351)
 
-[node name="PlayerX" parent="Dzwigi/A" index="0"]
-script = ExtResource("8_0ef43")
-
 [node name="I201_0" parent="Dzwigi/A/PlayerX" index="5" instance=ExtResource("8_o8xqn")]
 unique_name_in_owner = true
 position = Vector2(49, -11)
@@ -373,14 +366,8 @@ collision_mask = 4096
 position = Vector2(-6, 22)
 shape = SubResource("RectangleShape2D_yc7a6")
 
-[node name="PlayerY" parent="Dzwigi/A" index="1"]
-script = ExtResource("10_5tdj6")
-
 [node name="B" parent="Dzwigi" instance=ExtResource("3_5trik")]
 position = Vector2(78, 651)
-
-[node name="PlayerX" parent="Dzwigi/B" index="0"]
-script = ExtResource("11_msky7")
 
 [node name="I301_0" parent="Dzwigi/B/PlayerX" index="5" instance=ExtResource("8_o8xqn")]
 unique_name_in_owner = true
@@ -458,9 +445,6 @@ collision_mask = 4096
 position = Vector2(-6, 22)
 shape = SubResource("RectangleShape2D_yc7a6")
 
-[node name="PlayerY" parent="Dzwigi/B" index="1"]
-script = ExtResource("12_byypn")
-
 [node name="DzwigC_37_54" parent="Dzwigi" instance=ExtResource("3_5trik")]
 position = Vector2(78, 51)
 
@@ -536,14 +520,11 @@ collision_mask = 4096
 position = Vector2(-6, 22)
 shape = SubResource("RectangleShape2D_yc7a6")
 
-[connection signal="AX" from="." to="Dzwigi/A/PlayerX" method="_on_main_ax"]
-[connection signal="AY" from="." to="Dzwigi/A/PlayerY" method="_on_main_ay"]
-[connection signal="BX" from="." to="Dzwigi/B/PlayerX" method="_on_main_bx"]
-[connection signal="BY" from="." to="Dzwigi/B/PlayerY" method="_on_main_by"]
-[connection signal="TR" from="." to="Wanny/wanna" method="_on_main_tr"]
 [connection signal="TR_ramp" from="." to="Wanny/wanna" method="_on_main_tr_ramp"]
 [connection signal="TR_speed" from="." to="Wanny/wanna" method="_on_main_tr_speed"]
 [connection signal="TR_stop" from="." to="Wanny/wanna" method="_on_main_tr_stop"]
+[connection signal="X" from="." to="Dzwigi/A/PlayerX" method="_on_main_x"]
+[connection signal="Y" from="." to="Dzwigi/A/PlayerY" method="_on_main_y"]
 [connection signal="broker_connected" from="MQTT" to="." method="_on_mqtt_broker_connected"]
 [connection signal="broker_connection_failed" from="MQTT" to="." method="_on_mqtt_broker_connection_failed"]
 [connection signal="broker_disconnected" from="MQTT" to="." method="_on_mqtt_broker_disconnected"]

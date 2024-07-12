@@ -38,8 +38,27 @@ func _physics_process(delta):
 			#collider.move_and_collide(velocity * delta)
 
 
-func _on_main_tr_speed(_speed):
-	speed = floor(int(_speed) / 170)
+#func _on_main_tr_speed(_speed):
+	#speed = floor(int(_speed) / 170)
+	#if speed < 0:
+		#kierunek = 1
+	#if speed == 0:
+		#kierunek = 0
+	#if speed > 0:
+		#kierunek = -1
+	#speed = abs(speed)
+#
+#
+#func _on_main_tr_ramp(_ramp):
+	#acc = abs(floor(int(_ramp) / 10))
+	#
+#
+#func _on_main_tr_stop(_stop):
+	#stop = _stop
+
+
+func _on_main_tr(_tr):
+	speed = floor(int(_tr[0]) / 170)
 	if speed < 0:
 		kierunek = 1
 	if speed == 0:
@@ -47,14 +66,10 @@ func _on_main_tr_speed(_speed):
 	if speed > 0:
 		kierunek = -1
 	speed = abs(speed)
-
-
-func _on_main_tr_ramp(_ramp):
-	acc = abs(floor(int(_ramp) / 10))
 	
-
-func _on_main_tr_stop(_stop):
-	stop = _stop
+	acc = abs(floor(int(_tr[1]) / 10))
+	stop = _tr[2]
+	print(_tr, '=====================================')
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdvn"]
